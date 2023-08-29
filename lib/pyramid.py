@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from lib.exceptions import EmptyTensorError
-from lib.utils import interpolate_dense_features, upscale_positions
+from cnn_matching.lib.exceptions import EmptyTensorError
+from cnn_matching.lib.utils import interpolate_dense_features, upscale_positions
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -38,7 +38,7 @@ def process_multiscale(image, model, scales=[.25, 0.50, 1.0]):
                 previous_dense_features, size=[h, w],
                 mode='bilinear', align_corners=True
             )
-            del previous_dense_features
+            #del previous_dense_features
 
         # Recover detections.
         detections = model.detection(dense_features)

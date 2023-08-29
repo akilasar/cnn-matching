@@ -1,7 +1,7 @@
 import torch
-from lib.model import D2Net
-from lib.utils import preprocess_image
-from lib.pyramid import process_multiscale
+from cnn_matching.lib.model import D2Net
+from cnn_matching.lib.utils import preprocess_image
+from cnn_matching.lib.pyramid import process_multiscale
 import scipy
 import scipy.io
 import scipy.misc
@@ -11,7 +11,7 @@ use_cuda = torch.cuda.is_available()
 
 # Creating CNN model
 model = D2Net(
-    model_file="models/d2_tf.pth",
+    model_file=r"C:\Users\saravanan.akila\Summer\punch\template_matching\cnn_matching\models\d2_tf.pth",
     use_relu=True,
     use_cuda=use_cuda
 )

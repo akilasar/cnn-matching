@@ -4,7 +4,7 @@ import numpy as np
 
 import torch
 
-from lib.exceptions import EmptyTensorError
+from cnn_matching.lib.exceptions import EmptyTensorError
 
 
 def preprocess_image(image, preprocessing=None):
